@@ -345,3 +345,18 @@ Implementasi SOAR pada framework Wazuh SIEM berhasil mengotomatisasi proses dete
 Dibandingkan dengan implementasi SIEM sebelumnya yang memerlukan mitigasi manual, penambahan SOAR secara signifikan mengurangi waktu respons dari menit menjadi detik.
 
 ---
+
+## 9. Daftar Screenshot yang Diperlukan
+
+| No | Screenshot | Command/Lokasi |
+|---|---|---|
+| 1 | <img width="1849" height="926" alt="Screenshot 2026-05-25 174919" src="https://github.com/user-attachments/assets/5c765643-f2a9-42e7-8b73-a7e0ba68356c" /> | Wazuh Dashboard → Security Events → filter rule.id:100100 |
+| 2 | <img width="1919" height="965" alt="Screenshot 2026-05-25 114922" src="https://github.com/user-attachments/assets/708ca4ce-5846-4d21-8381-516ad5a447e1" /> | Wazuh Dashboard → DDoS Detection (dashboard dari SIEM sebelumnya) |
+| 3 | <img width="986" height="238" alt="Screenshot 2026-05-25 174256" src="https://github.com/user-attachments/assets/1ba331ef-0427-4994-8079-c79a2f2aabbe" /> | `sudo /var/ossec/bin/wazuh-logtest` |
+| 4 | <img width="892" height="165" alt="Screenshot 2026-05-25 174438" src="https://github.com/user-attachments/assets/02940a15-c071-4a18-b839-0c07556fd441" /> | Output `ab -n 3000 -c 200 http://20.6.131.76/`, ApacheBench timeout (bukti IP ter-block) |
+| 5 | <img width="1520" height="69" alt="Screenshot 2026-05-25 174507" src="https://github.com/user-attachments/assets/30554240-ef94-4dd3-8a39-377bd00ca557" /> | `sudo cat /var/ossec/logs/custom-soar.log`, `custom-soar.log` isi SUCCESS BLOCKING  |
+| 6 | <img width="932" height="55" alt="Screenshot 2026-05-25 174530" src="https://github.com/user-attachments/assets/888ba1ca-d51f-48f5-be0d-69f968d318ef" /> | `sudo iptables -L INPUT -n -v \| grep DROP`,  `iptables` DROP rule aktif|
+| 7 | Terminal: `active-responses.log` custom-ddos dipanggil | `sudo cat /var/ossec/logs/active-responses.log \| grep custom` |
+| 8 | File script Python | `sudo cat /var/ossec/active-response/bin/custom-ddos-mitigation.py` |
+| 9 | File local_rules.xml | `sudo cat /var/ossec/etc/rules/local_rules.xml` |
+| 10 | Bagian active-response di ossec.conf | `sudo grep -A10 "active-response" /var/ossec/etc/ossec.conf` |
