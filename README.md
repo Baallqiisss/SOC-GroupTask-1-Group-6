@@ -356,7 +356,7 @@ Dibandingkan dengan implementasi SIEM sebelumnya yang memerlukan mitigasi manual
 | 4 | <img width="892" height="165" alt="Screenshot 2026-05-25 174438" src="https://github.com/user-attachments/assets/02940a15-c071-4a18-b839-0c07556fd441" /> | Output `ab -n 3000 -c 200 http://20.6.131.76/`, ApacheBench timeout (bukti IP ter-block) |
 | 5 | <img width="1520" height="69" alt="Screenshot 2026-05-25 174507" src="https://github.com/user-attachments/assets/30554240-ef94-4dd3-8a39-377bd00ca557" /> | `sudo cat /var/ossec/logs/custom-soar.log`, `custom-soar.log` isi SUCCESS BLOCKING  |
 | 6 | <img width="932" height="55" alt="Screenshot 2026-05-25 174530" src="https://github.com/user-attachments/assets/888ba1ca-d51f-48f5-be0d-69f968d318ef" /> | `sudo iptables -L INPUT -n -v \| grep DROP`,  `iptables` DROP rule aktif|
-| 7 | Terminal: `active-responses.log` custom-ddos dipanggil | `sudo cat /var/ossec/logs/active-responses.log \| grep custom` |
-| 8 | File script Python | `sudo cat /var/ossec/active-response/bin/custom-ddos-mitigation.py` |
-| 9 | File local_rules.xml | `sudo cat /var/ossec/etc/rules/local_rules.xml` |
-| 10 | Bagian active-response di ossec.conf | `sudo grep -A10 "active-response" /var/ossec/etc/ossec.conf` |
+| 7 | <img width="1917" height="343" alt="image" src="https://github.com/user-attachments/assets/eb200505-b129-4c8b-a928-bc24642e0866" /> | `sudo cat /var/ossec/logs/active-responses.log \| grep custom`, `active-responses.log` custom-ddos dipanggil |
+| 8 | <img width="800" height="1044" alt="image" src="https://github.com/user-attachments/assets/c733ffbc-ccd8-4afc-a4cb-1076849e0c18" /> | `sudo cat /var/ossec/active-response/bin/custom-ddos-mitigation.py` |
+| 9 | <img width="1138" height="812" alt="image" src="https://github.com/user-attachments/assets/89999952-c44b-45bb-b99e-b7581fb0c90c" /> | `sudo cat /var/ossec/etc/rules/local_rules.xml` |
+| 10 | <img width="1210" height="760" alt="image" src="https://github.com/user-attachments/assets/76a50e91-09ad-4f6a-8ce9-909b2123deaa" /> | `sudo grep -A10 "active-response" /var/ossec/etc/ossec.conf` |
